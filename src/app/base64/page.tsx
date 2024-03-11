@@ -21,13 +21,15 @@ export default function base64() {
   };
 
   const handleSwap = () => {
-    // react batches rendering, thats why it works :)
-    const temp = inputText;
-    setInputText(outputText);
-    setOutputText(temp);
-  }
+    if (outputText !== "") {
+      setInputText(outputText);
+      setOutputText("");
+    }
+  };
+
   return (
     <div className="ui center aligned container calc">
+      <h2 className='h2'> base64 </h2>
       <div className='ui labeled input'>
         <textarea
           value={inputText}
@@ -40,7 +42,7 @@ export default function base64() {
       <div className='controls'>
         <button className='ui button' onClick={handleEncode}>Encode</button>
         <button className='ui button' onClick={handleDecode}>Decode</button>
-        <button className='ui button' onClick={handleSwap}>Swap</button>
+        <button className='ui button' onClick={handleSwap}>Swap <i className='arrow up icon'></i></button>
       </div>
       <div className='ui labeled input'>
         <textarea
