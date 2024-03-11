@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 
-export default function base64() {
+export default function Base64() {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
 

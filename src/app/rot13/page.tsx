@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 
-export default function rot13() {
+export default function ROT13() {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
   const [rotVal, setRotVal] = useState(13);

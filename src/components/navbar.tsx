@@ -17,9 +17,9 @@ export default function Navbar() {
       <div className='ui attached centered menu'>
         {/* <div className="ui container"> */}
           <span id='menu' style={{ display: 'flex'}}>
-            {MenuItems.map((item) => {
+            {MenuItems.map((item, index) => {
                 return(
-                    <div className='item'>
+                    <div key={index} className='item'>
                         <Link className={`link ${pathname === item.path ? 'active' : ''}`} href={item.path}>
                             {item.name}
                         </Link>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 
-export default function vigenere() {
+export default function Vigenere() {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
   const [key, setKey] = useState("");

@@ -2,6 +2,7 @@
   "name": "decipher",
   "version": "0.1.0",
   "private": true,
+  "author": "smk",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -14,8 +15,7 @@
     "fomantic-ui": "^2.9.3",
     "next": "14.1.3",
     "react": "^18",
-    "react-dom": "^18",
-    "semantic-ui-react": "^2.1.5"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
