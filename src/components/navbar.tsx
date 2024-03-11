@@ -8,7 +8,8 @@ export default function Navbar() {
     const MenuItems = [
         {'path':'/', 'name':'home'},
         {'path':'/base64', 'name':'base64'},
-        {'path':'/rot13', 'name':'rot13'}
+        {'path':'/rot13', 'name':'rot13'},
+        {'path':'/vigenere', 'name':'vigenere'}
     ]
  
   return (
