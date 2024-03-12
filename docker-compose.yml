@@ -1,8 +1,8 @@
 version: '3'
 services:
-  app:
+  decipher:
     container_name: decipher
     image: sudomoon/decipher
     build: .
     ports:
-      - "4000:80"
+      - "7003:80"

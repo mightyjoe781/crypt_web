@@ -9,7 +9,7 @@ RUN npm run build
 
 
 # Stage 2
-FROM nginx:alpine as production_stage
+FROM nginx:latest-alpine as production_stage
 # copy nginx conf
 RUN rm /etc/nginx/conf.d/*
 COPY ./nginx/default.conf /etc/nginx/conf.d/
