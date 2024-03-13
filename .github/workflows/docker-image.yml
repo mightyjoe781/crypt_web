@@ -1,0 +1,23 @@
+name: Build and Publish to DockerHub
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag sudomoon/decipher:latest
+
+    - name: publish
+      run: |
+        docker login -u sudomoon -p ${{ secrets.DOCKER_HUB_TOKEN }}
+        docker push sudomoon/decipher:latest
