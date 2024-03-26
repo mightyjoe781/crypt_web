@@ -11,6 +11,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      docker_pat: ${{ secrets.DOCKER_HUB_TOKEN }}
 
     steps:
     - uses: actions/checkout@v3
@@ -19,5 +21,5 @@ jobs:
 
     - name: publish
       run: |
-        docker login -u sudomoon -p ${{ secrets.DOCKER_HUB_TOKEN }}
+        docker login -u sudomoon -p $${{ env.docker_pat }}
         docker push sudomoon/decipher:latest
