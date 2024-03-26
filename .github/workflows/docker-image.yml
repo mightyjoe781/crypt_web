@@ -1,25 +1,24 @@
 name: Build and Publish to DockerHub
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  release:
+    types: [published]
 
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
-    env:
-      docker_pat: ${{ secrets.DOCKER_HUB_TOKEN }}
-
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag sudomoon/decipher:latest
 
     - name: publish
-      run: |
-        echo "$${{ env.docker_pat }}" | docker login -u sudomoon --password-stdin
-        docker push sudomoon/decipher:latest
+      run: docker push sudomoon/decipher:latest
