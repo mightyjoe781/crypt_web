@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "semantic:build": "cd .semantic && gulp build-css build-assets",
-    "semantic:watch": "cd .semantic && npm run semantic:build && gulp watch"
+    "fomantic:build": "cd .fomantic && gulp build-css build-assets",
+    "fomantic:watch": "cd .fomantic && npm run fomantic:build && gulp watch"
   },
   "dependencies": {
     "fomantic-ui": "^2.9.3",

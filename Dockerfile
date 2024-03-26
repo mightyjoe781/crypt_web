@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json .
 RUN npm install
 COPY . .
-RUN npm run semantic:build
+RUN npm run fomantic:build
 RUN npm run build
 
 
